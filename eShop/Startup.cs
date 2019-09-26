@@ -27,7 +27,7 @@ namespace eShop
         {
             services.AddRazorPages();
 
-            //
+            // 
             services.AddDbContext<ShopContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ShopContext")));
         }
 
