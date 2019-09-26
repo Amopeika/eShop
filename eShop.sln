@@ -7,13 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop", "eShop\eShop.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{B8DAC38C-D1CB-4965-9B1E-EDA9FD130E17}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dokumentation", "Dokumentation", "{0D2D7EFE-175E-4F0C-A8F6-138C3306E467}"
-	ProjectSection(SolutionItems) = preProject
-		..\..\Kenneth\ServiceLayer\Dokumentation\eShopDataBaseDiagram.PNG = ..\..\Kenneth\ServiceLayer\Dokumentation\eShopDataBaseDiagram.PNG
-		..\..\Kenneth\ServiceLayer\Dokumentation\eShopDokumentation.md = ..\..\Kenneth\ServiceLayer\Dokumentation\eShopDokumentation.md
-		..\..\Kenneth\ServiceLayer\Dokumentation\eShopERdiagram.PNG = ..\..\Kenneth\ServiceLayer\Dokumentation\eShopERdiagram.PNG
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
