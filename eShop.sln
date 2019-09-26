@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29318.209
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eShop", "eShop\eShop.csproj", "{12E64995-2AEC-4D78-B9A6-668EF2FF933D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataLayer", "DataLayer\DataLayer.csproj", "{B8DAC38C-D1CB-4965-9B1E-EDA9FD130E17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12E64995-2AEC-4D78-B9A6-668EF2FF933D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12E64995-2AEC-4D78-B9A6-668EF2FF933D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12E64995-2AEC-4D78-B9A6-668EF2FF933D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12E64995-2AEC-4D78-B9A6-668EF2FF933D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8DAC38C-D1CB-4965-9B1E-EDA9FD130E17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8DAC38C-D1CB-4965-9B1E-EDA9FD130E17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8DAC38C-D1CB-4965-9B1E-EDA9FD130E17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8DAC38C-D1CB-4965-9B1E-EDA9FD130E17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EEA42BA8-DD12-4773-B417-AF6B9E44D9A1}
+	EndGlobalSection
+EndGlobal
