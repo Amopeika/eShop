@@ -60,6 +60,24 @@ namespace DataLayer
                 .HasOne(x => x.Users)
                 .WithMany(x => x.Order)
                 .HasForeignKey(x => x.UserID);
+
+            modelBuilder.Entity<Company>().HasData(
+                new Company { CompanyID = 1, CompanyName = "OnePlus" });
+
+            modelBuilder.Entity<Phone>().HasData(
+                new Phone { CompanyID = 1, PhoneID = 1, PhoneName = "One", Price = 399.99M },
+                new Phone { CompanyID = 1, PhoneID = 2, PhoneName = "2", Price = 499.99M },
+                new Phone { CompanyID = 1, PhoneID = 3, PhoneName = "X", Price = 599.99M },
+                new Phone { CompanyID = 1, PhoneID = 4, PhoneName = "3", Price = 699.99M },
+                new Phone { CompanyID = 1, PhoneID = 5, PhoneName = "3T", Price = 799.99M },
+                new Phone { CompanyID = 1, PhoneID = 6, PhoneName = "5", Price = 899.99M },
+                new Phone { CompanyID = 1, PhoneID = 7, PhoneName = "5T", Price = 999.99M },
+                new Phone { CompanyID = 1, PhoneID = 8, PhoneName = "6", Price = 1299.99M },
+                new Phone { CompanyID = 1, PhoneID = 9, PhoneName = "6T", Price = 1399.99M },
+                new Phone { CompanyID = 1, PhoneID = 10, PhoneName = "7", Price = 1899.99M },
+                new Phone { CompanyID = 1, PhoneID = 11, PhoneName = "7 Pro", Price = 1999.99M }
+                );
         }
+
     }
 }
