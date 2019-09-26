@@ -2,9 +2,93 @@
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
+    //Response.Cookies.Append("MyCookie", "hej");
+    //var cookieValue = Request.Cookies["MyCookie"];
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+@*<h1>@ViewData["test"]</h1>*@
+@*<h1>@ViewData["Message"]</h1>*@
+
+@*<h1>@cookieValue</h1>
+    <h3>@TempData["TempTest"]</h3>*@
+@*@if (Model.basket != null)
+{
+    @foreach (var item in Model.basket)
+    {
+        <p>@item.ProductID</p>
+        <p>@item.Amount</p>
+    }
+}*@
+
+<vc:order-count></vc:order-count>
+
+<form>
+    <div class="row">
+        <div class="col-3">
+            Firma navn:
+            <select asp-for="FirmaNavn" asp-items="Model.Firma" class="form-control">
+                <option value="">All</option>
+            </select>
+        </div>
+        <div class="col-3">
+            Sorter:
+            <select asp-for="SortPhone" class="form-control">
+                <option value="">Vælg</option>
+                <option value="PhoneName">Telefon navn (A - Z)</option>
+                <option value="PhoneNameDESC">Telefon navn (Z -A)</option>
+                <option value="CompanyName">Firma (A - Z)</option>
+                <option value="CompanyNameDESC">Firma (Z -A)</option>
+                <option value="Price">Pris (Lav - Høj)</option>
+                <option value="PriceDESC">Pris (Høj - Lav)</option>
+            </select>
+        </div>
+        <div class="col-6">
+            Telefonens navn:
+            <div class="row">
+                <div class="col-10">
+                    <input class="form-control" type="text" asp-for="SearchString" />
+                </div>
+                <div class="col-2">
+                    <input type="submit" value="Filter" class="btn btn-primary form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="p-2 row mt-5 bg-light">
+    @foreach (var item in Model.Phone)
+    {
+        <div class="col-3">
+            <div class="card mb-4 grow-shadow">
+                <div class="card-header"><h2>@item.Company.CompanyName</h2></div>
+                @if (!string.IsNullOrEmpty(item.Photo.PhonePhoto))
+                {
+                    <img style="height: 16rem; width: 100%" class="card-img" src="@item.Photo.PhonePhoto" />
+                }
+                else
+                {
+                    <img style="height: 16rem; width: 100%" class="card-img" src="~/notfound.png" />
+                }
+                <div class="card-body text-dark">
+                    <h4>@item.PhoneName</h4>
+                    @if (item.Price <= 0)
+                    {
+                        <p class="font-weight-bold text-success">GRATIS</p>
+                    }
+                    else
+                    {
+                        <p class="font-weight-bold">$@item.Price</p>
+                    }
+
+                    <form asp-page="AddOrder" asp-page-handler="AddOrder" asp-route-id="@item.PhoneID" method="post">
+                        <button type="submit" class="btn float-right text-white fas fa-cart-arrow-down" style="background-color: deepskyblue">
+                            ADD TO CART
+                        </button>
+                        @*<a class="btn float-right text-white fas fa-cart-arrow-down" style="background-color: deepskyblue">ADD TO CART</a>*@
+                    </form>
+                </div>
+            </div>
+        </div>
+    }
 </div>
