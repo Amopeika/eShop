@@ -7,7 +7,7 @@ namespace DataLayer.Models
     public class Order
     {
         public int OrderID { get; set; }
-        public DateTime OrderDate { get; set; } = DateTime.Now;
+        public DateTime OrderDate { get; set; }
         public int UserID { get; set; }
 
         public ICollection<OrderLine> OrderLine { get; set; }

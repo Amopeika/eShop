@@ -6,18 +6,11 @@ using DataLayer.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer;
-using ServiceLayer.ShopService;
 
 namespace eShopWeb.Pages
 {
     public class AdminModel : PageModel
     {
-        private readonly IShopService _shopservice;
-
-        public AdminModel(IShopService shopservice)
-        {
-            _shopservice = shopservice;
-        }
 
         [BindProperty(SupportsGet = true)]
         public int CurrentPage { get; set; }
@@ -26,13 +19,11 @@ namespace eShopWeb.Pages
 
         public int TotalPages => (int)Math.Ceiling(decimal.Divide(Count, PageSize));
 
-        public List<Phone> Phone { get; set; }
+        public List<Phone> Phones { get; set; }
 
-        public async Task OnGetAsync()
+        public void OnGet([FromServices] IShopService _shopService)
         {
-            Count = await _shopservice.GetPageCount();
-            Phone = await _shopservice.GetPhoneListAsync(CurrentPage, PageSize);
-            //Phone = await _shopservice.GetPaginatedResult(CurrentPage, PageSize);
+            Phones = _shopService.GetPhones().ToList();
         }
     }
 }

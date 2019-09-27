@@ -11,16 +11,7 @@
 
 @*<h1>@cookieValue</h1>
     <h3>@TempData["TempTest"]</h3>*@
-@*@if (Model.basket != null)
-{
-    @foreach (var item in Model.basket)
-    {
-        <p>@item.ProductID</p>
-        <p>@item.Amount</p>
-    }
-}*@
 
-<vc:order-count></vc:order-count>
 
 <form>
     <div class="row">
@@ -57,14 +48,14 @@
 </form>
 
 <div class="p-2 row mt-5 bg-light">
-    @foreach (var item in Model.Phone)
+    @foreach (var item in Model.Phones)
     {
         <div class="col-3">
             <div class="card mb-4 grow-shadow">
                 <div class="card-header"><h2>@item.Company.CompanyName</h2></div>
                 @if (!string.IsNullOrEmpty(item.Photo.PhonePhoto))
                 {
-                    <img style="height: 16rem; width: 100%" class="card-img" src="@item.Photo.PhonePhoto" />
+                    <img style="height: 21rem; width: 100%" class="card-img" src="@item.Photo.PhonePhoto" />
                 }
                 else
                 {
@@ -87,6 +78,11 @@
                         </button>
                         @*<a class="btn float-right text-white fas fa-cart-arrow-down" style="background-color: deepskyblue">ADD TO CART</a>*@
                     </form>
+                </div>
+                <div class="card-footer text-muted">
+                    <a asp-page="./Detail" asp-route-phoneid="@item.PhoneID">
+                        <i class="fas fa-info-circle"></i>
+                    </a>
                 </div>
             </div>
         </div>

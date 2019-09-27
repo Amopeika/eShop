@@ -28,13 +28,13 @@ namespace DataLayer
             modelBuilder.Entity<Order>().HasKey(k => k.OrderID);
             modelBuilder.Entity<User>().HasKey(k => k.UserID);
 
-            //modelBuilder.Entity<Order>()
-            //    .Property(p => p.OrderDate)
-            //    .HasDefaultValue(DateTime.Now);
+            modelBuilder.Entity<Order>()
+                .Property(p => p.OrderDate)
+                .HasDefaultValue(DateTime.Now);
 
-            //modelBuilder.Entity<Phone>()
-            //    .Property(p => p.Price)
-            //    .HasColumnType("decimal(30,2)");
+            modelBuilder.Entity<Phone>()
+                .Property(p => p.Price)
+                .HasColumnType("decimal(30,2)");
 
             modelBuilder.Entity<Photo>()
                 .HasOne(x => x.Phone)
@@ -65,7 +65,7 @@ namespace DataLayer
                 new Company { CompanyID = 1, CompanyName = "OnePlus" });
 
             modelBuilder.Entity<Phone>().HasData(
-                new Phone { CompanyID = 1, PhoneID = 1, PhoneName = "One", Price = 399.99M },
+                new Phone { CompanyID = 1, PhoneID = 1, PhoneName = "One", Price = 399.99M},
                 new Phone { CompanyID = 1, PhoneID = 2, PhoneName = "2", Price = 499.99M },
                 new Phone { CompanyID = 1, PhoneID = 3, PhoneName = "X", Price = 599.99M },
                 new Phone { CompanyID = 1, PhoneID = 4, PhoneName = "3", Price = 699.99M },
@@ -77,7 +77,20 @@ namespace DataLayer
                 new Phone { CompanyID = 1, PhoneID = 10, PhoneName = "7", Price = 1899.99M },
                 new Phone { CompanyID = 1, PhoneID = 11, PhoneName = "7 Pro", Price = 1999.99M }
                 );
-        }
 
+            modelBuilder.Entity<Photo>().HasData(
+                new Photo { PhoneID = 1, PhotoID = 1, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-one.jpg" },
+                new Photo { PhoneID = 2, PhotoID = 2, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-two.jpg" },
+                new Photo { PhoneID = 3, PhotoID = 3, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-x.jpg" },
+                new Photo { PhoneID = 4, PhotoID = 4, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-3-.jpg" },
+                new Photo { PhoneID = 5, PhotoID = 5, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-3t-.jpg" },
+                new Photo { PhoneID = 6, PhotoID = 6, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-5.jpg" },
+                new Photo { PhoneID = 7, PhotoID = 7, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-5t.jpg" },
+                new Photo { PhoneID = 8, PhotoID = 8, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-6-red.jpg" },
+                new Photo { PhoneID = 9, PhotoID = 9, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-6t-thunder-purple.jpg" },
+                new Photo { PhoneID = 10, PhotoID = 10, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-7--.jpg" },
+                new Photo { PhoneID = 11, PhotoID = 11, PhonePhoto = "https://fdn2.gsmarena.com/vv/bigpic/oneplus-7-pro-r1.jpg" }
+                );
+        }
     }
 }

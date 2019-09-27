@@ -1,0 +1,20 @@
+﻿@page "{phoneid:int}"
+@model eShop.Pages.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>@Model.phone.PhoneName</h2>
+<div>
+    <img src="@Model.phone.Photo.PhonePhoto" alt="Alternate Text" class="img-thumbnail my-4" />
+</div>
+
+<div>
+    Id: @Model.phone.PhoneID
+</div>
+<div>
+    Producer: @Model.phone.Company.CompanyName
+</div>
+<div>
+    Price: @Model.phone.Price
+</div>

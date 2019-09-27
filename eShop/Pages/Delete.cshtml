@@ -1,4 +1,4 @@
-﻿@page "{id:int?}"
+﻿@page "{phoneid:int}"
 @model DeleteModel
 @{
     ViewData["Title"] = "Delete";
@@ -8,31 +8,31 @@
 
 <div class="col-3">
     <div class="card mb-4 grow-shadow">
-        <div class="card-header"><h2>@Model.Phone.Company.CompanyName</h2></div>
-        @if (!string.IsNullOrEmpty(Model.Phone.Photo.PhonePhoto))
+        <div class="card-header"><h2>@Model.phone.Company.CompanyName</h2></div>
+        @if (!string.IsNullOrEmpty(Model.phone.Photo.PhonePhoto))
         {
-            <img style="height: 16rem; width: 100%" class="card-img" src="@Model.Phone.Photo.PhonePhoto" />
+            <img style="height: 16rem; width: 100%" class="card-img" src="@Model.phone.Photo.PhonePhoto" />
         }
         else
         {
             <img style="height: 16rem; width: 100%" class="card-img" src="~/notfound.png" />
         }
         <div class="card-body text-dark">
-            <h4>@Model.Phone.PhoneName</h4>
-            @if (Model.Phone.Price <= 0)
+            <h4>@Model.phone.PhoneName</h4>
+            @if (Model.phone.Price <= 0)
             {
                 <p class="font-weight-bold text-success">GRATIS</p>
             }
             else
             {
-                <p class="font-weight-bold">$@Model.Phone.Price</p>
+                <p class="font-weight-bold">$@Model.phone.Price</p>
             }
         </div>
     </div>
 </div>
 
 <form method="post">
-    <input type="hidden" asp-for="Phone.PhoneID" />
+    <input type="hidden" asp-for="phone.PhoneID" />
     <input type="submit" value="Delete" class="btn btn-default" />
     <partial name="_PartialForm" />
 

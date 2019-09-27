@@ -7,14 +7,18 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ServiceLayer;
 
-namespace eShopWeb.Pages
+namespace eShop.Pages
 {
-    public class DeleteModel : PageModel
+    public class DetailModel : PageModel
     {
         public Phone phone { get; set; }
 
+        [TempData]
+        public string Message { get; set; }
+
         private readonly IShopService _shopService;
-        public DeleteModel(IShopService shopService)
+
+        public DetailModel(IShopService shopService)
         {
             _shopService = shopService;
         }

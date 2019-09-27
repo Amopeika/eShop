@@ -10,16 +10,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Phone[0].PhoneID)
+                @Html.DisplayNameFor(model => model.Phones[0].PhoneID)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phone[0].PhoneName)
+                @Html.DisplayNameFor(model => model.Phones[0].PhoneName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phone[0].Company.CompanyName)
+                @Html.DisplayNameFor(model => model.Phones[0].Company.CompanyName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Phone[0].Price)
+                @Html.DisplayNameFor(model => model.Phones[0].Price)
             </th>
             <th>
                 Redigere
@@ -30,7 +30,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Phone)
+        @foreach (var item in Model.Phones)
         {
             <tr>
                 <td>
@@ -55,14 +55,3 @@
         }
     </tbody>
 </table>
-
-<div>
-    <ul class="pagination">
-        @for (var i = 1; i <= Model.TotalPages; i++)
-        {
-            <li class="page-item" @(i == Model.CurrentPage ? "active" : "")>
-                <a asp-route-currentpage="@i" class="page-link">@i</a>
-            </li>
-        }
-    </ul>
-</div>
